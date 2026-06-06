@@ -49,7 +49,7 @@ function App() {
         <Certificates id="Certificates" />
 
         <footer>
-          <div className="p-12  border-t text-center">
+          <div className="md:p-8 lg:p-12 p-4  border-t text-center">
             <p>© 2026 Andrei Victor Balabbo. All rights reserved.</p>
           </div>
         </footer>
