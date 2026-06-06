@@ -50,7 +50,9 @@ function App() {
 
         <footer>
           <div className="md:p-8 lg:p-12 p-4  border-t text-center">
-            <p>© 2026 Andrei Victor Balabbo. All rights reserved.</p>
+            <p className="text-xs md:text-md">
+              © 2026 Andrei Victor Balabbo. All rights reserved.
+            </p>
           </div>
         </footer>
       </main>
