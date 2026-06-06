@@ -1,4 +1,4 @@
-import { Code2 } from "lucide-react";
+import { Code2, GraduationCap } from "lucide-react";
 
 export default function About({ id }: { id?: string }) {
   const skills = [
@@ -49,6 +49,10 @@ export default function About({ id }: { id?: string }) {
       </div>
 
       {/* Education */}
+      <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+        <GraduationCap size={16} />
+        Education
+      </div>
       <div className="border rounded-xl p-5 space-y-1">
         <p className="font-semibold text-base">
           Bachelor of Science in Information Technology
