@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MapPin } from "lucide-react";
+import { MapPin, Mail, Download } from "lucide-react";
 import ImgStack from "@/components/21st/pics";
 
 export default function Home({ id }: { id?: string }) {
@@ -31,8 +31,11 @@ export default function Home({ id }: { id?: string }) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <Button className="w-full sm:w-auto">Send Email</Button>
+            <Button className="w-full sm:w-auto">
+              <Mail /> Send Email
+            </Button>
             <Button variant="outline" className="w-full sm:w-auto">
+              <Download />
               Download CV
             </Button>
           </div>

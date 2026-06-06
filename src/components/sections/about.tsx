@@ -23,7 +23,7 @@ export default function About({ id }: { id?: string }) {
           I'm Andrei Victor Balabbo, an aspiring web developer from Calamagui,
           San Pablo, Isabela. I enjoy building clean, responsive web
           applications that are easy to use and pleasant to look at. I've
-          competed in national events like Hack4Gov and placed in ICT
+          competed in regional events like Hack4Gov and placed in ICT
           competitions as both a Static and Dynamic Web champion. I'm actively
           looking for opportunities where I can grow, contribute, and work
           alongside experienced developers.
