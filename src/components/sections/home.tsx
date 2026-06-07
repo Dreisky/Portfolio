@@ -37,10 +37,12 @@ export default function Home({ id }: { id?: string }) {
 
           <motion.p
             {...fadeUp(0.3)}
-            className="text-sm lg:text-base text-muted-foreground max-w-md mx-auto md:mx-0"
+            className="text-sm lg:text-base text-justify text-muted-foreground max-w-md mx-auto md:mx-0"
           >
-            I build modern, responsive web applications using React, Tailwind,
-            and shadcn UI. Focused on clean UI and smooth user experience.
+            I build modern, responsive web applications using React, Laravel,
+            and Inertia.js. I've won ICT competitions in both static and dynamic
+            web development, and I'm passionate about clean UI and real-world
+            problem solving.
           </motion.p>
 
           <motion.div

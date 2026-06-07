@@ -26,7 +26,7 @@ export default function About({ id }: { id?: string }) {
       {/* Intro */}
       <motion.div className="space-y-4" {...fadeUp}>
         <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
-        <p className="text-muted-foreground text-base leading-relaxed">
+        <p className="text-muted-foreground text-justify text-base leading-relaxed">
           I'm Andrei Victor Balabbo, an aspiring web developer from Calamagui,
           San Pablo, Isabela. I enjoy building clean, responsive web
           applications that are easy to use and pleasant to look at. I've

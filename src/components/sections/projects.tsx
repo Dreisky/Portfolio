@@ -64,7 +64,7 @@ export default function Projects({ id }: { id?: string }) {
                 )}
               </div>
 
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed text-justify">
                 {project.description}
               </p>
 
