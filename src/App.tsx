@@ -3,6 +3,7 @@ import { Home as HomeIcon, User, Folder, BookA } from "lucide-react";
 
 import GridVignetteBackground from "@/components/21st/grid-background";
 import NavBar from "@/components/21st/nav-bar";
+import Preloader from "@/components/21st/preloader";
 
 import About from "@/components/sections/about";
 import Home from "@/components/sections/home";
@@ -12,6 +13,8 @@ import Certificates from "@/components/sections/certificates";
 function App() {
   return (
     <>
+      <Preloader />
+
       <GridVignetteBackground className="opacity-10" />
 
       <NavBar
@@ -59,4 +62,5 @@ function App() {
     </>
   );
 }
+
 export default App;

@@ -1,4 +1,11 @@
 import { Code2, GraduationCap } from "lucide-react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.75 },
+};
 
 export default function About({ id }: { id?: string }) {
   const skills = [
@@ -17,7 +24,7 @@ export default function About({ id }: { id?: string }) {
   return (
     <section id={id} className="w-full mx-auto px-6 py-20 space-y-16">
       {/* Intro */}
-      <div className="space-y-4">
+      <motion.div className="space-y-4" {...fadeUp}>
         <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
         <p className="text-muted-foreground text-base leading-relaxed">
           I'm Andrei Victor Balabbo, an aspiring web developer from Calamagui,
@@ -28,10 +35,14 @@ export default function About({ id }: { id?: string }) {
           looking for opportunities where I can grow, contribute, and work
           alongside experienced developers.
         </p>
-      </div>
+      </motion.div>
 
       {/* Skills */}
-      <div className="space-y-3">
+      <motion.div
+        className="space-y-3"
+        {...fadeUp}
+        transition={{ duration: 0.75, delay: 0.1 }}
+      >
         <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           <Code2 size={16} />
           Skills & Stack
@@ -46,27 +57,29 @@ export default function About({ id }: { id?: string }) {
             </span>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Education */}
-      <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
-        <GraduationCap size={16} />
-        Education
-      </div>
-      <div className="border rounded-xl p-5 space-y-1">
-        <p className="font-semibold text-base">
-          Bachelor of Science in Information Technology
-        </p>
-        <p className="text-muted-foreground text-sm">
-          Cagayan State University — 2026
-        </p>
-        <p className="text-muted-foreground text-sm">
-          Focused on web development and database systems
-        </p>
-        <p className="text-sm font-medium mt-2">
-          GWA: <span className="text-foreground">92.58</span>
-        </p>
-      </div>
+      <motion.div {...fadeUp} transition={{ duration: 0.75, delay: 0.2 }}>
+        <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+          <GraduationCap size={16} />
+          Education
+        </div>
+        <div className="border rounded-xl p-5 space-y-1">
+          <p className="font-semibold text-base">
+            Bachelor of Science in Information Technology
+          </p>
+          <p className="text-muted-foreground text-sm">
+            Cagayan State University — 2026
+          </p>
+          <p className="text-muted-foreground text-sm">
+            Focused on web development and database systems
+          </p>
+          <p className="text-sm font-medium mt-2">
+            GWA: <span className="text-foreground">92.58</span>
+          </p>
+        </div>
+      </motion.div>
     </section>
   );
 }

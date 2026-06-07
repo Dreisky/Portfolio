@@ -1,5 +1,12 @@
 import { FolderGit, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.75 },
+};
 
 const projects = [
   {
@@ -31,16 +38,18 @@ const projects = [
 export default function Projects({ id }: { id?: string }) {
   return (
     <section id={id} className="w-full mx-auto px-6 py-20 space-y-12">
-      <div className="space-y-2">
+      <motion.div {...fadeUp} className="space-y-2">
         <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
         <p className="text-muted-foreground text-sm">
           Things I've built so far.
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <div
+        {projects.map((project, index) => (
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.75, delay: index * 0.2 }}
             key={project.title}
             className="flex flex-col justify-between border rounded-xl p-6 space-y-4 hover:border-foreground/20 transition-colors"
           >
@@ -90,7 +99,7 @@ export default function Projects({ id }: { id?: string }) {
                 </Button>
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

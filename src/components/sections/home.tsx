@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Mail, Download } from "lucide-react";
+import { motion } from "framer-motion";
 import ImgStack from "@/components/21st/pics";
+
+const fadeUp = (delay: number) => ({
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, delay: 1.25 + delay },
+});
 
 export default function Home({ id }: { id?: string }) {
   return (
@@ -11,7 +18,7 @@ export default function Home({ id }: { id?: string }) {
       <div className="flex w-full max-w-6xl flex-col-reverse lg:flex-row items-center justify-center lg:gap-12 gap-4">
         {/* TEXT SIDE */}
         <div className="flex-1 text-center lg:text-left space-y-4">
-          <div>
+          <motion.div {...fadeUp(0.1)}>
             <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">
               Andrei Victor Balabbo
             </h1>
@@ -19,30 +26,43 @@ export default function Home({ id }: { id?: string }) {
               <MapPin size={16} />
               <span>Calamagui, San Pablo, Isabela</span>
             </p>
-          </div>
+          </motion.div>
 
-          <h3 className="text-xl lg:text-2xl font-medium text-muted-foreground">
+          <motion.h3
+            {...fadeUp(0.2)}
+            className="text-xl lg:text-2xl font-medium text-muted-foreground"
+          >
             Aspiring Web Developer
-          </h3>
+          </motion.h3>
 
-          <p className="text-sm lg:text-base text-muted-foreground max-w-md mx-auto md:mx-0">
+          <motion.p
+            {...fadeUp(0.3)}
+            className="text-sm lg:text-base text-muted-foreground max-w-md mx-auto md:mx-0"
+          >
             I build modern, responsive web applications using React, Tailwind,
             and shadcn UI. Focused on clean UI and smooth user experience.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+          <motion.div
+            {...fadeUp(0.4)}
+            className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
+          >
             <Button className="w-full sm:w-auto">
               <Mail /> Send Email
             </Button>
             <Button variant="outline" className="w-full sm:w-auto">
-              <Download />
-              Download CV
+              <Download /> Download CV
             </Button>
-          </div>
+          </motion.div>
         </div>
 
         {/* IMAGE SIDE */}
-        <div className="flex-1 flex justify-end">
+        <motion.div
+          className="flex-1 flex justify-end"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 1.25 }}
+        >
           <ImgStack
             images={[
               "/images/profile.jpg",
@@ -51,7 +71,7 @@ export default function Home({ id }: { id?: string }) {
               "/images/profile3.jpg",
             ]}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

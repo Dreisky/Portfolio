@@ -1,4 +1,11 @@
 import { Award, BadgeCheck, Trophy } from "lucide-react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.75 },
+};
 
 const academic = [
   {
@@ -72,22 +79,27 @@ const competitions = [
 export default function Certificates({ id }: { id?: string }) {
   return (
     <section id={id} className="w-full mx-auto px-6 py-20 space-y-12">
-      <div className="space-y-2">
+      <motion.div {...fadeUp} className="space-y-2">
         <h2 className="text-3xl font-bold tracking-tight">Certificates</h2>
         <p className="text-muted-foreground text-sm">
           Awards and proficiency recognitions from Cagayan State University.
         </p>
-      </div>
+      </motion.div>
 
       {/* Academic */}
       <div className="space-y-4">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+        <motion.div
+          {...fadeUp}
+          className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground"
+        >
           <Award size={14} />
           Academic
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {academic.map((cert) => (
-            <div
+          {academic.map((cert, i) => (
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.75, delay: i * 0.2 }}
               key={cert.title}
               className="border rounded-xl p-5 space-y-2 hover:border-foreground/20 transition-colors"
             >
@@ -100,20 +112,25 @@ export default function Certificates({ id }: { id?: string }) {
               </div>
               <p className="text-xs text-muted-foreground">{cert.issuer}</p>
               <p className="text-xs text-muted-foreground">{cert.year}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Proficiency */}
       <div className="space-y-4">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+        <motion.div
+          {...fadeUp}
+          className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground"
+        >
           <BadgeCheck size={14} />
           Proficiency
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {proficiency.map((cert) => (
-            <div
+          {proficiency.map((cert, i) => (
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.75, delay: i * 0.2 }}
               key={cert.title}
               className="border rounded-xl p-5 space-y-2 hover:border-foreground/20 transition-colors"
             >
@@ -126,20 +143,25 @@ export default function Certificates({ id }: { id?: string }) {
               </div>
               <p className="text-xs text-muted-foreground">{cert.issuer}</p>
               <p className="text-xs text-muted-foreground">{cert.year}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Competitions */}
       <div className="space-y-4">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+        <motion.div
+          {...fadeUp}
+          className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground"
+        >
           <Trophy size={14} />
           Competitions
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {competitions.map((cert, i) => (
-            <div
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.75, delay: i * 0.1 }}
               key={`${cert.title}-${i}`}
               className="border rounded-xl p-5 space-y-2 hover:border-foreground/20 transition-colors"
             >
@@ -152,7 +174,7 @@ export default function Certificates({ id }: { id?: string }) {
               </div>
               <p className="text-xs text-muted-foreground">{cert.issuer}</p>
               <p className="text-xs text-muted-foreground">{cert.year}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
