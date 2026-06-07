@@ -99,7 +99,7 @@ export default function Certificates({ id }: { id?: string }) {
           {academic.map((cert, i) => (
             <motion.div
               {...fadeUp}
-              transition={{ duration: 0.75, delay: i * 0.2 }}
+              transition={{ duration: 0.75, delay: i * 0.1 }}
               key={cert.title}
               className="border rounded-xl p-5 space-y-2 hover:border-foreground/20 transition-colors"
             >
@@ -130,7 +130,7 @@ export default function Certificates({ id }: { id?: string }) {
           {proficiency.map((cert, i) => (
             <motion.div
               {...fadeUp}
-              transition={{ duration: 0.75, delay: i * 0.2 }}
+              transition={{ duration: 0.75, delay: i * 0.1 }}
               key={cert.title}
               className="border rounded-xl p-5 space-y-2 hover:border-foreground/20 transition-colors"
             >

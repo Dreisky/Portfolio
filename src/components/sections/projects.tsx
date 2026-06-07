@@ -49,7 +49,7 @@ export default function Projects({ id }: { id?: string }) {
         {projects.map((project, index) => (
           <motion.div
             {...fadeUp}
-            transition={{ duration: 0.75, delay: index * 0.2 }}
+            transition={{ duration: 0.75, delay: index * 0.1 }}
             key={project.title}
             className="flex flex-col justify-between border rounded-xl p-6 space-y-4 hover:border-foreground/20 transition-colors"
           >
