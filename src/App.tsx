@@ -15,7 +15,13 @@ function App() {
     <>
       <Preloader />
 
-      <GridVignetteBackground className="opacity-10" />
+      <GridVignetteBackground className="opacity-15" />
+
+      {/* <div className="fixed inset-0 z-[-2] overflow-hidden">
+        <div className="absolute top-50 -left-60 w-120 h-120 bg-purple-500/20 rounded-full blur-3xl" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 right-40 -translate-x-1/2 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl" />
+      </div> */}
 
       <NavBar
         items={[
