@@ -15,7 +15,7 @@ function App() {
     <>
       <Preloader />
 
-      <GridVignetteBackground className="opacity-15" />
+      <GridVignetteBackground className="opacity-10" />
 
       {/* <div className="fixed inset-0 z-[-2] overflow-hidden">
         <div className="absolute top-50 -left-60 w-120 h-120 bg-purple-500/20 rounded-full blur-3xl" />
