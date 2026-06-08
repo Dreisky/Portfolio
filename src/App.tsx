@@ -1,7 +1,14 @@
 import "./App.css";
-import { Home as HomeIcon, User, Folder, BookA } from "lucide-react";
+import {
+  IconCertificate,
+  IconHome,
+  IconUser,
+  IconFolder,
+  IconAddressBook,
+} from "@tabler/icons-react";
 
-import GridVignetteBackground from "@/components/21st/grid-background";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
+
 import NavBar from "@/components/21st/nav-bar";
 import Preloader from "@/components/21st/preloader";
 
@@ -13,42 +20,40 @@ import Certificates from "@/components/sections/certificates";
 function App() {
   return (
     <>
+      <SmoothCursor />
       <Preloader />
-
-      <GridVignetteBackground className="opacity-10" />
-
-      {/* <div className="fixed inset-0 z-[-2] overflow-hidden">
-        <div className="absolute top-50 -left-60 w-120 h-120 bg-purple-500/20 rounded-full blur-3xl" />
-        <div className="absolute -top-20 -right-20 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 right-40 -translate-x-1/2 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl" />
-      </div> */}
 
       <NavBar
         items={[
           {
             name: "Home",
             url: "#Home",
-            icon: HomeIcon,
+            icon: IconHome,
           },
           {
             name: "About",
             url: "#About",
-            icon: User,
+            icon: IconUser,
           },
           {
             name: "Projects",
             url: "#Projects",
-            icon: Folder,
+            icon: IconFolder,
           },
           {
             name: "Certificates",
             url: "#Certificates",
-            icon: BookA,
+            icon: IconCertificate,
+          },
+          {
+            name: "Contacts",
+            url: "#Contacts",
+            icon: IconAddressBook,
           },
         ]}
       />
 
-      <main className="w-full max-w-6xl mx-auto">
+      <main className="w-full">
         <Home id="Home" />
 
         <About id="About" />
@@ -58,7 +63,7 @@ function App() {
         <Certificates id="Certificates" />
 
         <footer>
-          <div className="md:p-8 lg:p-12 p-4  border-t text-center">
+          <div className="md:p-5 lg:p-7 p-3  border-t text-center">
             <p className="text-xs md:text-md">
               © 2026 Andrei Victor Balabbo. All rights reserved.
             </p>

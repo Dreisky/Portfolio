@@ -25,7 +25,7 @@ export default function Preloader() {
   useLayoutEffect(() => {
     if (loaded && loaderRef.current && textRef.current) {
       const tl = gsap.timeline({
-        delay: 0.75,
+        delay: 0.5,
         defaults: { ease: "power2.inOut" },
         onComplete: () => {
           gsap.set(loaderRef.current, {

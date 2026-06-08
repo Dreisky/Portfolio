@@ -1,98 +1,155 @@
-import { useState, useRef } from "react";
+"use client";
 import { motion } from "framer-motion";
-import type { PanInfo } from "framer-motion";
+import type { Variants } from "framer-motion";
+import React from "react";
 
-interface Card {
-  id: number;
-  src: string;
-  zIndex: number;
+interface ImageRevealProps {
+  leftImage: string;
+  middleImage: string;
+  rightImage: string;
 }
 
-interface ImgStackProps {
-  images: string[];
-}
-
-export default function ImgStack({ images }: ImgStackProps) {
-  const [cards, setCards] = useState<Card[]>(
-    images.map((src, index) => ({
-      id: index,
-      src,
-      zIndex: 50 - index * 10,
-    })),
-  );
-
-  const [isAnimating, setIsAnimating] = useState(false);
-  const dragStartPos = useRef({ x: 0, y: 0 });
-  const minDragDistance = 50;
-
-  const getCardStyles = (index: number) => ({
-    x: index * -12,
-    y: index * -8,
-    rotate: index === 0 ? 0 : -(2 + index * 3),
-    scale: 1,
-  });
-
-  const handleDragStart = (_: any, info: PanInfo) => {
-    dragStartPos.current = { x: info.point.x, y: info.point.y };
+export default function ImageReveal({
+  leftImage,
+  middleImage,
+  rightImage,
+}: ImageRevealProps) {
+  const containerVariants: Variants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        staggerChildren: 0.2,
+      },
+    },
   };
 
-  const handleDragEnd = (_: any, info: PanInfo) => {
-    const dx = info.point.x - dragStartPos.current.x;
-    const dy = info.point.y - dragStartPos.current.y;
+  const leftImageVariants: Variants = {
+    initial: { rotate: 0, x: 0, y: 0 },
+    animate: {
+      rotate: -8,
+      x: -150,
+      y: 10,
+      transition: {
+        type: "spring" as const,
+        stiffness: 120,
+        damping: 12,
+      },
+    },
+    hover: {
+      rotate: 1,
+      x: -160,
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 200,
+        damping: 15,
+      },
+    },
+  };
 
-    const distance = Math.sqrt(dx * dx + dy * dy);
+  const middleImageVariants: Variants = {
+    initial: { rotate: 0, x: 0, y: 0 },
+    animate: {
+      rotate: 6,
+      x: 0,
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 120,
+        damping: 12,
+      },
+    },
+    hover: {
+      rotate: 0,
+      x: 0,
+      y: -10,
+      transition: {
+        type: "spring" as const,
+        stiffness: 200,
+        damping: 15,
+      },
+    },
+  };
 
-    if (isAnimating || distance < minDragDistance) return;
-
-    setIsAnimating(true);
-
-    setCards((prev) => {
-      const newCards = [...prev];
-      const first = newCards.shift()!;
-      newCards.push(first);
-
-      return newCards.map((card, i) => ({
-        ...card,
-        zIndex: 50 - i * 10,
-      }));
-    });
-
-    setTimeout(() => setIsAnimating(false), 300);
+  const rightImageVariants: Variants = {
+    initial: { rotate: 0, x: 0, y: 0 },
+    animate: {
+      rotate: -6,
+      x: 200,
+      y: 20,
+      transition: {
+        type: "spring" as const,
+        stiffness: 120,
+        damping: 12,
+      },
+    },
+    hover: {
+      rotate: 3,
+      x: 200,
+      y: 10,
+      transition: {
+        type: "spring" as const,
+        stiffness: 200,
+        damping: 15,
+      },
+    },
   };
 
   return (
-    <div className="relative flex items-center justify-center w-96 h-96 my-4">
-      {cards.map((card, index) => {
-        const isTop = index === 0;
+    <motion.div
+      className="relative flex items-center justify-center w-64 h-64 mb-4"
+      variants={containerVariants}
+      initial="initial"
+      animate="animate"
+    >
+      {/* Left Image - Lowest z-index */}
+      <motion.div
+        className="absolute  md:w-60 md:h-60 origin-bottom-right overflow-hidden rounded-xl shadow-lg bg-white"
+        variants={leftImageVariants}
+        whileHover="hover"
+        animate="animate"
+        style={{ zIndex: 30 }}
+      >
+        <img
+          src={leftImage}
+          alt="Left image"
+          className="object-cover p-2 rounded-xl"
+        />
+      </motion.div>
 
-        return (
-          <motion.div
-            key={card.id}
-            className="absolute w-64 h-80 rounded-xl overflow-hidden shadow-xl cursor-grab active:cursor-grabbing border border-border bg-background"
-            style={{ zIndex: card.zIndex }}
-            animate={getCardStyles(index)}
-            drag={isTop && !isAnimating}
-            dragElastic={0.2}
-            dragConstraints={{ left: -150, right: 150, top: -150, bottom: 150 }}
-            dragSnapToOrigin
-            onDragStart={handleDragStart}
-            onDragEnd={handleDragEnd}
-            whileHover={isTop ? { scale: 1.05 } : {}}
-            whileDrag={{
-              scale: 1.1,
-              rotate: 0,
-              zIndex: 100,
-            }}
-          >
-            <img
-              src={card.src}
-              alt={`Card ${card.id}`}
-              className="w-full h-full object-cover pointer-events-none"
-              draggable={false}
-            />
-          </motion.div>
-        );
-      })}
-    </div>
+      {/* Middle Image - Middle z-index */}
+      <motion.div
+        className="absolute  md:w-60 md:h-60 origin-bottom-left overflow-hidden rounded-xl shadow-lg bg-white"
+        variants={middleImageVariants}
+        whileHover="hover"
+        animate="animate"
+        style={{ zIndex: 20 }}
+      >
+        <img
+          src={middleImage}
+          alt="Middle image"
+          className="object-cover p-2 rounded-2xl"
+        />
+      </motion.div>
+
+      {/* Right Image - Highest z-index */}
+      <motion.div
+        className="absolute  md:w-60 md:h-60 origin-bottom-right overflow-hidden rounded-xl shadow-lg bg-white"
+        variants={rightImageVariants}
+        whileHover="hover"
+        animate="animate"
+        style={{ zIndex: 10 }}
+      >
+        <img
+          src={rightImage}
+          alt="Right image"
+          className="object-cover p-2 rounded-2xl"
+        />
+      </motion.div>
+    </motion.div>
   );
 }
