@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import React from "react";
 
 interface ImageRevealProps {
   leftImage: string;

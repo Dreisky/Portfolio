@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
@@ -15,7 +14,7 @@ interface NavBarProps {
   className?: string;
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name);
 
   return (

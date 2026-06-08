@@ -1,4 +1,4 @@
-import { FolderGit, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { IconBrandGithub } from "@tabler/icons-react";
