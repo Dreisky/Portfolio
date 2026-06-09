@@ -7,7 +7,7 @@ import {
   IconAddressBook,
 } from "@tabler/icons-react";
 
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
+// import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 import NavBar from "@/components/21st/nav-bar";
 import Preloader from "@/components/21st/preloader";
@@ -20,7 +20,7 @@ import Certificates from "@/components/sections/certificates";
 function App() {
   return (
     <>
-      <SmoothCursor />
+      {/* <SmoothCursor /> */}
       <Preloader />
 
       <NavBar

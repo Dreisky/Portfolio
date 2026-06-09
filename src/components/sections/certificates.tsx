@@ -102,7 +102,7 @@ export default function Certificates({ id }: { id?: string }) {
                 {...fadeUp}
                 transition={{ duration: 0.75, delay: i * 0.1 }}
                 key={cert.title}
-                className="border rounded-xl p-5 space-y-2 hover:border-foreground/20 transition-colors"
+                className="border shadow-sm rounded-xl p-5 space-y-2 hover:shadow-md hover:-translate-y-1 hover:transition hover:duration-300"
               >
                 <div className="flex items-start justify-between gap-2">
                   <p className="font-semibold text-sm">{cert.title}</p>

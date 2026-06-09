@@ -1,12 +1,49 @@
-import { Code2, GraduationCap } from "lucide-react";
+import {
+  Code2,
+  GraduationCap,
+  Briefcase,
+  GraduationCapIcon,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { SkillsMarquee } from "@/components/sections/skills";
+import { GridPatternLinearGradient } from "@/components/ui/grid-pattern-linear-gradient";
+import { cn } from "@/lib/utils";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   transition: { duration: 0.75 },
 };
+
+const workExp: string[] = [
+  "Built an internal certificate management system for TESDA Region 2 employees, enabling admins to issue digital certificates directly from the platform",
+  "Implemented an approval workflow where issued certificates are routed to the Regional Director for confirmation before becoming accessible to recipients",
+  "Once approved, employees can log into their accounts and view their certificate with the Regional Director's digital signature applied.",
+  "Connected to TESDA's existing database alongside the app's own database to pull live employee records without duplicating data",
+];
+
+const skills = [
+  {
+    name: "Laravel",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+  },
+  {
+    name: "Bootstrap",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+  },
+  {
+    name: "Vite",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
+  },
+  {
+    name: "MySQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  },
+  {
+    name: "Git",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+];
 
 export default function About({ id }: { id?: string }) {
   return (
@@ -40,24 +77,80 @@ export default function About({ id }: { id?: string }) {
         </motion.div>
 
         {/* Education */}
-        <motion.div {...fadeUp} transition={{ duration: 0.75, delay: 0.2 }}>
-          <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
-            <GraduationCap size={16} />
+        <motion.div {...fadeUp} transition={{ duration: 0.75, delay: 0.3 }}>
+          <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4 ">
+            <GraduationCapIcon size={16} />
             Education
           </div>
-          <div className="rounded-xl p-5 space-y-1 bg-dark border border-border/50 bg-muted backdrop-blur-md">
-            <p className="font-semibold text-base">
-              Bachelor of Science in Information Technology
-            </p>
-            <p className="text-muted-foreground text-sm">
-              Cagayan State University — 2026
-            </p>
-            <p className="text-muted-foreground text-sm">
-              Focused on web development and database systems
-            </p>
-            <p className="text-sm font-medium mt-2">
-              GWA: <span className="text-foreground">92.58</span>
-            </p>
+          <div className="relative rounded-xl p-12 space-y-1 border hover:shadow-xl transition duration-300">
+            <GridPatternLinearGradient />
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+              <img src="/images/csu.webp" alt="CSU Logo" width={70} />
+              <div>
+                <p className="font-semibold text-xl md:text-start text-center">
+                  Bachelor of Science in Information Technology
+                </p>
+                <p className="text-black/60 text-sm md:text-start text-center">
+                  Cagayan State University | 2022 - 2026
+                </p>
+                <p className="text-sm font-medium mt-2 md:text-start text-center">
+                  GWA: <span>92.58</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Work */}
+        <motion.div {...fadeUp} transition={{ duration: 0.75, delay: 0.3 }}>
+          <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+            <Briefcase size={16} />
+            Work
+          </div>
+
+          <div className="relative rounded-xl p-10 border hover:shadow-xl transition duration-300 space-y-6 overflow-hidden">
+            <GridPatternLinearGradient />
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+              {/* Logo */}
+              <img src="/images/tesda.webp" alt="TESDA Logo" width={70} />
+
+              {/* Content */}
+              <div className="flex-1">
+                <p className="font-semibold text-xl md:text-left text-center">
+                  Web Development Intern
+                </p>
+
+                <p className="text-muted-foreground text-sm mb-4 md:text-left text-center">
+                  TESDA Region II | 2022 - 2026
+                </p>
+
+                {/* Work Experience */}
+                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground text-justify">
+                  {workExp.map((exp, i) => (
+                    <li key={i}>{exp}</li>
+                  ))}
+                </ul>
+
+                {/* Skills (NOW HORIZONTAL) */}
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {skills.map((skill, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 rounded-full border bg-muted/50 px-3 py-1 text-xs"
+                    >
+                      <img
+                        src={skill.icon}
+                        height={14}
+                        width={14}
+                        alt={skill.name}
+                      />
+                      {skill.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
