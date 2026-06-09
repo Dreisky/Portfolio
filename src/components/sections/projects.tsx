@@ -11,6 +11,7 @@ const fadeUp = {
 
 const projects = [
   {
+    image: "/images/certsys.png",
     title: "TESDA Certification System",
     description:
       "A certification management system for TESDA that handles trainee records, assessments, and certificate generation for technical-vocational programs.",
@@ -19,6 +20,7 @@ const projects = [
     private: true,
   },
   {
+    image: "/images/certsys.png",
     title: "RentWheels",
     description:
       "A full-stack single-business car rental web app with an admin dashboard for managing cars and bookings, and a customer-facing side for browsing and reserving vehicles.",
@@ -27,6 +29,7 @@ const projects = [
     private: false,
   },
   {
+    image: "/images/certsys.png",
     title: "Blinkr",
     description:
       "A mini social media app where users can post, follow others, and interact with a feed. Built as a personal project to explore full-stack social features.",
@@ -55,6 +58,13 @@ export default function Projects({ id }: { id?: string }) {
               key={project.title}
               className="flex flex-col justify-between border rounded-xl p-6 space-y-4 hover:border-foreground/20 transition-colors"
             >
+              {/* Project Image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full object-cover border rounded"
+              />
+
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="font-semibold text-base">{project.title}</h3>

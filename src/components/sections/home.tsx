@@ -63,12 +63,14 @@ export default function Home({ id }: { id?: string }) {
             {...fadeUp(0.4)}
             className="flex flex-col sm:flex-row gap-3 justify-center"
           >
-            <Button
-              variant="outline"
-              className="w-full sm:w-auto px-12 py-6 mt-4 text-md"
-            >
-              <Download /> Download CV
-            </Button>
+            <a href="/files/CV_BALABBO.pdf" download>
+              <Button
+                variant="outline"
+                className="w-full sm:w-auto px-12 py-6 mt-4 text-md"
+              >
+                <Download /> Download CV
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>
