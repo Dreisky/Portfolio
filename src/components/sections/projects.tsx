@@ -15,7 +15,28 @@ const projects = [
     title: "TESDA Certification System",
     description:
       "A certification management system for TESDA that handles trainee records, assessments, and certificate generation for technical-vocational programs.",
-    stack: ["Laravel", "Tailwind CSS", "MySQL", "JavaScript"],
+    stack: [
+      {
+        name: "Laravel",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+      },
+      {
+        name: "Bootstrap",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+      },
+      {
+        name: "Vite",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
+      },
+      {
+        name: "MySQL",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      },
+      {
+        name: "Git",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      },
+    ],
     github: null,
     private: true,
   },
@@ -24,7 +45,28 @@ const projects = [
     title: "RentWheels",
     description:
       "A full-stack single-business car rental web app with an admin dashboard for managing cars and bookings, and a customer-facing side for browsing and reserving vehicles.",
-    stack: ["React", "Laravel", "Inertia.js", "Tailwind CSS", "MySQL"],
+    stack: [
+      {
+        name: "Laravel",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+      },
+      {
+        name: "React",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "TypeScript",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
+        name: "Inertia.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/inertiajs/inertiajs-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      },
+    ],
     github: "#",
     private: false,
   },
@@ -33,7 +75,28 @@ const projects = [
     title: "Blinkr",
     description:
       "A mini social media app where users can post, follow others, and interact with a feed. Built as a personal project to explore full-stack social features.",
-    stack: ["React", "Laravel", "Tailwind CSS", "SQLite"],
+    stack: [
+      {
+        name: "Laravel",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+      },
+      {
+        name: "React",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Inertia.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/inertiajs/inertiajs-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      },
+      {
+        name: "Git",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      },
+    ],
     github: "#",
     private: false,
   },
@@ -56,70 +119,79 @@ export default function Projects({ id }: { id?: string }) {
               {...fadeUp}
               transition={{ duration: 0.75, delay: index * 0.1 }}
               key={project.title}
-              className="flex flex-col justify-between border rounded-xl p-6 space-y-4 hover:border-foreground/20 transition-colors"
+              className="group flex flex-col hover:shadow-xl transition-all duration-300 justify-between border rounded-lg overflow-hidden hover:border-foreground/20 transition-colors"
             >
               {/* Project Image */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full object-cover border rounded"
-              />
-
-              <div className="space-y-3">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-semibold text-base">{project.title}</h3>
-                  {project.private && (
-                    <span className="flex items-center gap-1 text-xs text-muted-foreground border rounded-full px-2 py-0.5 shrink-0">
-                      <Lock size={10} />
-                      Private
-                    </span>
-                  )}
-                </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed text-justify">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs px-2 py-0.5 rounded-full border bg-muted text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div className="relative overflow-hidden h-44 bg-muted">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {project.private && (
+                  <span className="absolute top-3 right-3 flex items-center gap-1 text-xs bg-background/80 backdrop-blur-sm border rounded-full px-2 py-0.5">
+                    <Lock size={10} />
+                    Private
+                  </span>
+                )}
               </div>
 
-              <div className="pt-2">
-                {project.private ? (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    disabled
-                    className="w-full"
-                  >
-                    <Lock size={13} className="mr-2" />
-                    Private Repo
-                  </Button>
-                ) : (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    asChild
-                    className="w-full"
-                  >
-                    <a
-                      href={project.github!}
-                      target="_blank"
-                      rel="noopener noreferrer"
+              <div className="p-6 flex flex-col flex-1 justify-between gap-4">
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-base transition-colors duration-300 group-hover:text-blue-500">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2 mt-5">
+                    {project.stack.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-2 rounded-full border bg-muted/50 px-3 py-1 text-xs"
+                      >
+                        <img
+                          src={skill.icon}
+                          height={14}
+                          width={14}
+                          alt={skill.name}
+                        />
+                        {skill.name}
+                      </div>
+                    ))}
+                  </div>
+
+                  {project.private ? (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      disabled
+                      className="w-full"
                     >
-                      <IconBrandGithub size={13} className="mr-2" />
-                      View on GitHub
-                    </a>
-                  </Button>
-                )}
+                      <Lock size={13} className="mr-2" />
+                      Private Repo
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      asChild
+                      className="w-full"
+                    >
+                      <a
+                        href={project.github!}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <IconBrandGithub size={13} className="mr-2" />
+                        View on GitHub
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
