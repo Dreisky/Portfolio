@@ -3,7 +3,6 @@ import type { LucideIcon } from "lucide-react";
 import { IconSendFilled } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { Button } from "../ui/button";
 
 interface NavItem {
   name: string;

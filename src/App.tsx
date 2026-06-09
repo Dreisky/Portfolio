@@ -1,11 +1,5 @@
 import "./App.css";
-import {
-  IconCertificate,
-  IconHome,
-  IconUser,
-  IconFolder,
-  IconAddressBook,
-} from "@tabler/icons-react";
+import { IconCertificate, IconUser, IconFolder } from "@tabler/icons-react";
 
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
