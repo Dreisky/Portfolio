@@ -1,13 +1,7 @@
-import {
-  Code2,
-  GraduationCap,
-  Briefcase,
-  GraduationCapIcon,
-} from "lucide-react";
+import { Code2, Briefcase, GraduationCapIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { SkillsMarquee } from "@/components/sections/skills";
 import { GridPatternLinearGradient } from "@/components/ui/grid-pattern-linear-gradient";
-import { cn } from "@/lib/utils";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
