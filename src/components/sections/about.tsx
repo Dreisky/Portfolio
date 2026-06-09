@@ -84,10 +84,13 @@ export default function About({ id }: { id?: string }) {
                 <p className="font-semibold text-xl md:text-start text-center">
                   Bachelor of Science in Information Technology
                 </p>
-                <p className="text-black/60 text-sm md:text-start text-center">
+                <p className="text-sm md:text-start text-center mb-4 text-muted-foreground">
                   Cagayan State University | 2022 - 2026
                 </p>
-                <p className="text-sm font-medium mt-2 md:text-start text-center">
+                <p className="text-md font-medium md:text-start text-center">
+                  Academic Distinction
+                </p>
+                <p className="text-sm font-medium md:text-start text-center">
                   GWA: <span>92.58</span>
                 </p>
               </div>
@@ -116,7 +119,7 @@ export default function About({ id }: { id?: string }) {
                 </p>
 
                 <p className="text-muted-foreground text-sm mb-4 md:text-left text-center">
-                  TESDA Region II | 2022 - 2026
+                  TESDA Region II | Dec 2025 - Apr 2026
                 </p>
 
                 {/* Work Experience */}

@@ -26,11 +26,6 @@ function App() {
       <NavBar
         items={[
           {
-            name: "Home",
-            url: "#Home",
-            icon: IconHome,
-          },
-          {
             name: "About",
             url: "#About",
             icon: IconUser,
@@ -44,11 +39,6 @@ function App() {
             name: "Certificates",
             url: "#Certificates",
             icon: IconCertificate,
-          },
-          {
-            name: "Contacts",
-            url: "#Contacts",
-            icon: IconAddressBook,
           },
         ]}
       />
