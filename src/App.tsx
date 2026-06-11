@@ -1,5 +1,12 @@
 import "./App.css";
+
 import { IconCertificate, IconUser, IconFolder } from "@tabler/icons-react";
+import {
+  IconBrandFacebookFilled,
+  IconBrandGithubFilled,
+  IconBrandLinkedinFilled,
+} from "@tabler/icons-react";
+
 import { Routes, Route } from "react-router-dom";
 
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
@@ -56,10 +63,29 @@ function App() {
               <Certificates id="Certificates" />
 
               <footer>
-                <div className="md:p-5 lg:p-7 p-3  border-t text-center">
-                  <p className="text-xs md:text-md">
-                    © 2026 Andrei Victor Balabbo. All rights reserved.
-                  </p>
+                <div className="md:p-5 lg:p-7 p-3  border-t">
+                  <div className="max-w-6xl mx-auto px-6 py-2 flex flex-col-reverse gap-2 md:flex-row items-center md:justify-between">
+                    <p className="text-sm md:text-md">
+                      © 2026 Andrei Victor Balabbo. All rights reserved.
+                    </p>
+                    <div className="flex gap-4">
+                      <a
+                        href="https://www.facebook.com/Dreisky19"
+                        target="_blank"
+                      >
+                        <IconBrandFacebookFilled />
+                      </a>
+                      <a href="https://github.com/Dreisky" target="_blank">
+                        <IconBrandGithubFilled />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/andrei-victor-balabbo-495854412/"
+                        target="_blank"
+                      >
+                        <IconBrandLinkedinFilled />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </footer>
             </main>
