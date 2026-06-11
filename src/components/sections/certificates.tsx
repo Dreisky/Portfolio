@@ -1,10 +1,4 @@
-import {
-  Award,
-  BadgeCheck,
-  Trophy,
-  ArrowRight,
-  SquareArrowOutUpRight,
-} from "lucide-react";
+import { ArrowRight, SquareArrowOutUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -14,74 +8,74 @@ const fadeUp = {
   transition: { duration: 0.75 },
 };
 
-const academic = [
-  {
-    title: "Academic Distinction",
-    issuer: "Cagayan State University",
-    year: "2026",
-  },
-  {
-    title: "Academic Awardee",
-    issuer: "Cagayan State University",
-    year: "2026",
-  },
-  {
-    title: "Best Capstone",
-    issuer: "Cagayan State University",
-    year: "2026",
-  },
-];
+// const academic = [
+//   {
+//     title: "Academic Distinction",
+//     issuer: "Cagayan State University",
+//     year: "2026",
+//   },
+//   {
+//     title: "Academic Awardee",
+//     issuer: "Cagayan State University",
+//     year: "2026",
+//   },
+//   {
+//     title: "Best Capstone",
+//     issuer: "Cagayan State University",
+//     year: "2026",
+//   },
+// ];
 
-const proficiency = [
-  {
-    title: "C# Programming",
-    issuer: "Cagayan State University",
-    year: "2026",
-  },
-  {
-    title: "VB.NET Programming",
-    issuer: "Cagayan State University",
-    year: "2026",
-  },
-  {
-    title: "Static Web Development",
-    issuer: "Cagayan State University",
-    year: "2026",
-  },
-  {
-    title: "Dynamic Web Development",
-    issuer: "Cagayan State University",
-    year: "2026",
-  },
-];
+// const proficiency = [
+//   {
+//     title: "C# Programming",
+//     issuer: "Cagayan State University",
+//     year: "2026",
+//   },
+//   {
+//     title: "VB.NET Programming",
+//     issuer: "Cagayan State University",
+//     year: "2026",
+//   },
+//   {
+//     title: "Static Web Development",
+//     issuer: "Cagayan State University",
+//     year: "2026",
+//   },
+//   {
+//     title: "Dynamic Web Development",
+//     issuer: "Cagayan State University",
+//     year: "2026",
+//   },
+// ];
 
-const competitions = [
-  {
-    title: "Hack4Gov Participant",
-    issuer: "Hack4Gov",
-    year: "2024",
-  },
-  {
-    title: "Hack4Gov Participant",
-    issuer: "Hack4Gov",
-    year: "2025",
-  },
-  {
-    title: "ICT Uniwide Static Web Champion",
-    issuer: "Cagayan State University",
-    year: "2025",
-  },
-  {
-    title: "ICT Uniwide Dynamic Web Champion",
-    issuer: "Cagayan State University",
-    year: "2026",
-  },
-  {
-    title: "ICT Roadshow 2nd Placer",
-    issuer: "ICT Roadshow",
-    year: "2025",
-  },
-];
+// const competitions = [
+//   {
+//     title: "Hack4Gov Participant",
+//     issuer: "Hack4Gov",
+//     year: "2024",
+//   },
+//   {
+//     title: "Hack4Gov Participant",
+//     issuer: "Hack4Gov",
+//     year: "2025",
+//   },
+//   {
+//     title: "ICT Uniwide Static Web Champion",
+//     issuer: "Cagayan State University",
+//     year: "2025",
+//   },
+//   {
+//     title: "ICT Uniwide Dynamic Web Champion",
+//     issuer: "Cagayan State University",
+//     year: "2026",
+//   },
+//   {
+//     title: "ICT Roadshow 2nd Placer",
+//     issuer: "ICT Roadshow",
+//     year: "2025",
+//   },
+// ];
 
 const awards = [
   {
