@@ -14,5 +14,3 @@ createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
   </StrictMode>,
 );
-
-document.documentElement.classList.add("dark");

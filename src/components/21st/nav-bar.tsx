@@ -21,7 +21,7 @@ export function NavBar({ items }: NavBarProps) {
   return (
     <div className="w-full fixed bg-background/60 backdrop-blur-lg border-b z-50">
       <div className="max-w-6xl mx-auto py-3 px-6 flex items-center justify-between">
-        <a href="#Home" onClick={() => setActiveTab("")}>
+        <a href="/#Home" onClick={() => setActiveTab("")}>
           <h1 className="font-bold text-xl">Drei.</h1>
         </a>
 
