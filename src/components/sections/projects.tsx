@@ -41,7 +41,7 @@ const projects = [
     private: true,
   },
   {
-    image: "/images/certsys.png",
+    image: "/images/rentwheels.png",
     title: "RentWheels",
     description:
       "A full-stack single-business car rental web app with an admin dashboard for managing cars and bookings, and a customer-facing side for browsing and reserving vehicles.",
@@ -71,7 +71,7 @@ const projects = [
     private: false,
   },
   {
-    image: "/images/certsys.png",
+    image: "/images/blinkr.png",
     title: "Blinkr",
     description:
       "A mini social media app where users can post, follow others, and interact with a feed. Built as a personal project to explore full-stack social features.",
@@ -119,7 +119,7 @@ export default function Projects({ id }: { id?: string }) {
               {...fadeUp}
               transition={{ duration: 0.75, delay: index * 0.1 }}
               key={project.title}
-              className="group flex flex-col hover:shadow-xl transition-all duration-300 justify-between border rounded-lg overflow-hidden hover:border-foreground/20 transition-colors"
+              className="group flex flex-col hover:shadow-xl transition-all duration-300 justify-between border rounded-lg overflow-hidden hover:border-blue-500 transition-colors"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden h-44 bg-muted">
