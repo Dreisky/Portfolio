@@ -115,7 +115,7 @@ export default function Certificates({ id }: { id?: string }) {
     <section id={id} className="w-full">
       <div className="mx-auto px-6 py-20 space-y-12 max-w-6xl">
         <motion.div {...fadeUp} className="flex items-end justify-between">
-          <div className="space-y-2">
+          <div className="space-y-2 md:w-2xl text-justify w-[260px]">
             <h2 className="text-3xl font-bold tracking-tight">Certificates</h2>
             <p className="text-muted-foreground text-sm">
               Awards, certifications, and recognitions that reflect my skills
@@ -136,14 +136,14 @@ export default function Certificates({ id }: { id?: string }) {
               transition={{ duration: 0.75, delay: i * 0.1 }}
               className="p-8 group border flex items-center justify-between rounded-md hover:shadow-lg hover:transition-all hover:duration-300"
             >
-              <div className="flex gap-4">
+              <div className="flex items-start gap-4">
                 <img
                   src={award.logo}
                   alt={award.issuer}
                   height={50}
                   width={50}
                 />
-                <div>
+                <div className="md:w-full w-[260px]">
                   <h1 className="text-lg">{award.title}</h1>
                   <p className="text-muted-foreground text-sm">
                     {award.issuer}
