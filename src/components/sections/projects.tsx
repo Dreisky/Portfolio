@@ -112,7 +112,8 @@ export default function Projects({ id }: { id?: string }) {
         <motion.div {...fadeUp} className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
           <p className="text-muted-foreground text-sm">
-            Things I've built so far.
+            A collection of projects I've built while leveling up as a
+            developer.
           </p>
         </motion.div>
 
