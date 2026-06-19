@@ -41,10 +41,10 @@ const projects = [
     private: true,
   },
   {
-    image: "/images/rentwheels.png",
-    title: "RentWheels",
+    image: "/images/anidrei.png",
+    title: "AniDrei",
     description:
-      "A full-stack single-business car rental web app with an admin dashboard for managing cars and bookings, and a customer-facing side for browsing and reserving vehicles.",
+      "A full-stack anime discovery web app for browsing, searching, and exploring anime titles, featuring trailer previews, detailed show pages, and a dynamic hero banner powered by the Jikan and AniList APIs.",
     stack: [
       {
         name: "Laravel",
@@ -65,6 +65,9 @@ const projects = [
       {
         name: "Tailwind CSS",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      },
+      {
+        name: "API",
       },
     ],
     github: "#",
@@ -153,12 +156,15 @@ export default function Projects({ id }: { id?: string }) {
                         key={index}
                         className="flex items-center gap-2 rounded-full border bg-muted/50 px-3 py-1 text-xs"
                       >
-                        <img
-                          src={skill.icon}
-                          height={14}
-                          width={14}
-                          alt={skill.name}
-                        />
+                        {skill.icon && (
+                          <img
+                            src={skill.icon}
+                            height={14}
+                            width={14}
+                            alt={skill?.name}
+                          />
+                        )}
+
                         {skill.name}
                       </div>
                     ))}
